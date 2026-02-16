@@ -1,9 +1,9 @@
 # CPP Module 02 - Ad-hoc Polymorphism & Fixed-point Numbers
 
-### Project Description
+
  **"An exploration of Fixed-point arithmetic, Operator Overloading, and the Orthodox Canonical Class Form in C++."**
 
----
+
 
 ## 🧠 Key Learning Objectives
 
@@ -12,7 +12,7 @@
 * **🟡 Operator Overloading**: Redefining the behavior of arithmetic, comparison, and increment operators for custom types.
 * **🟣 Ad-hoc Polymorphism**: Utilizing function overloading to provide multiple implementations of the same operation.
 
----
+
 
 ## 📂 Exercise Breakdown
 
@@ -48,11 +48,11 @@
     * **Geometric Logic**: Applying fixed-point arithmetic to solve real-world coordinate problems.
     * High-level class composition and mathematical precision.
 
----
+
 
 ## 🚀 Technical Requirements
 * **Standard**: C++ 98.
 * **Compiler**: `c++` with `-Wall -Wextra -Werror` flags.
 * **Precision**: The logic must handle the specific constraints of fixed-point math while avoiding the overhead of the `float` type where possible.
 
----
+
