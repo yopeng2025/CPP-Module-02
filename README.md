@@ -1,7 +1,7 @@
 # CPP Module 02 - Ad-hoc Polymorphism & Fixed-point Numbers
 
 
- **"An exploration of Fixed-point arithmetic, Operator Overloading, and the Orthodox Canonical Class Form in C++."**
+ **An exploration of Fixed-point arithmetic, Operator Overloading, and the Orthodox Canonical Class Form in C++.**
 
 
 
@@ -46,8 +46,6 @@
 * **Concepts**:
     * **Barycentric Coordinates**: Using vector math to calculate relative positioning.
     * **Geometric Logic**: Applying fixed-point arithmetic to solve real-world coordinate problems.
-    * High-level class composition and mathematical precision.
-
 
 
 ## 🚀 Technical Requirements
