@@ -3,6 +3,7 @@
 
  **An exploration of Fixed-point arithmetic, Operator Overloading, and the Orthodox Canonical Class Form in C++.**
 
+learning resource: https://www.geogebra.org/
 
 
 ## 🧠 Key Learning Objectives
