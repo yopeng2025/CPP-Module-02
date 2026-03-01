@@ -1,57 +1,64 @@
-# CPP Module 02 - Ad-hoc Polymorphism & Fixed-point Numbers
+# CPP Module 02 Documentation
 
+## Core Concepts
 
- **An exploration of Fixed-point arithmetic, Operator Overloading, and the Orthodox Canonical Class Form in C++.**
+In this module, we will explore fundamental concepts in C++ programming, including classes, objects, and encapsulation. Mastering these concepts is essential for creating robust C++ applications.
 
-learning resource: https://www.geogebra.org/
+### Classes and Objects
+A class is a blueprint for creating objects. It defines properties and behaviors that the objects created from the class can exhibit.
 
+### Encapsulation
+Encapsulation is the bundling of data and methods that operate on the data within one unit, or class. This helps protect the integrity of the object by restricting outside access.
 
-## 🧠 Key Learning Objectives
+## Operator Overloading Examples
+C++ allows you to redefine the way operators work for user-defined types. Below are examples of operator overloading for a simple fixed-point arithmetic class.
 
-* **🟢 Orthodox Canonical Form**: Implementing the four essential member functions to ensure robust class behavior and resource safety.
-* **🔵 Fixed-point Representation**: Understanding the mechanics of fractional bits and how they differ from floating-point numbers.
-* **🟡 Operator Overloading**: Redefining the behavior of arithmetic, comparison, and increment operators for custom types.
-* **🟣 Ad-hoc Polymorphism**: Utilizing function overloading to provide multiple implementations of the same operation.
+### Example of Overloading the Addition Operator
+```cpp
+class FixedPoint {
+private:
+    int value; // Represents fixed-point value
+public:
+    FixedPoint(int v) : value(v) {}
 
+    FixedPoint operator+(const FixedPoint& other) {
+        return FixedPoint(this->value + other.value);
+    }
+};
+```
 
+### Example of Overloading the Output Operator
+```cpp
+std::ostream& operator<<(std::ostream& os, const FixedPoint& fp) {
+    os << fp.value; // Output the fixed point value
+    return os;
+}
+```
 
-## 📂 Exercise Breakdown
+## Fixed-Point Arithmetic
+Fixed-point arithmetic is a representation of real numbers that keeps a fixed number of digits after the decimal point. This is useful for applications where precise decimal representation is crucial, such as in financial calculations. The advantages of fixed-point math include:
+- Predictable performance
+- Reduced complexity compared to floating-point arithmetic
 
-### 🟢 Ex00: My First Class in Orthodox Canonical Form
-* **Goal**: Implement a `Fixed` class that stores a fixed-point value using an integer.
-* **Concepts**:
-    * Adhering to the **Orthodox Canonical Form** (Default Constructor, Copy Constructor, Assignment Operator, Destructor).
-    * Understanding the `static const int` for fractional bits.
-    * Managing raw bits without complex conversions yet.
+### Example of Fixed-Point Operation
+```cpp
+FixedPoint a(10);
+FixedPoint b(20);
+FixedPoint c = a + b; // c represents 30
+```
 
-### 🔵 Ex01: Towards a more useful fixed-point number class
-* **Level**: **Intermediate**
-* **Goal**: Expand the class to convert between `int`/`float` and fixed-point values.
-* **Concepts**:
-    * **Bitwise Shifting**: Using `<<` and `>>` to scale values into fixed-point format.
-    * **Insertion Operator Overloading**: Overloading the `<<` operator to allow printing via `std::cout`.
-    * Mathematics of rounding and scaling factors ($2^n$).
+## BSP Algorithm Application
+BSP (Binary Space Partitioning) is a method for recursively subdividing a space into convex sets by hyperplanes. It is commonly used in computer graphics to manage rendering of scenes.
 
-### 🟡 Ex02: Now we’re talking
-* **Level**: **Advanced**
-* **Goal**: Overload a wide range of operators to make the class behave like a built-in numeric type.
-* **Concepts**:
-    * **Arithmetic Operators**: `+`, `-`, `*`, `/`.
-    * **Comparison Operators**: `>`, `<`, `>=`, `<=`, `==`, `!=`.
-    * **Increment/Decrement**: Differentiating between pre-increment (`++i`) and post-increment (`i++`).
-    * **Static Member Functions**: Implementing `min` and `max` overloads for `const` and non-const references.
+### Example of BSP Tree Construction
+```cpp
+class BSPNode {
+public:
+    BSPNode* left;
+    BSPNode* right;
+    // Function to build BSP tree
+};
+```
 
-### 🟣 Ex03: BSP (Binary Space Partitioning)
-* **Level**: **Expert**
-* **Goal**: Determine if a point is located inside a triangle using the `Fixed` class.
-* **Concepts**:
-    * **Barycentric Coordinates**: Using vector math to calculate relative positioning.
-    * **Geometric Logic**: Applying fixed-point arithmetic to solve real-world coordinate problems.
-
-
-## 🚀 Technical Requirements
-* **Standard**: C++ 98.
-* **Compiler**: `c++` with `-Wall -Wextra -Werror` flags.
-* **Precision**: The logic must handle the specific constraints of fixed-point math while avoiding the overhead of the `float` type where possible.
-
-
+### Application in Rendering
+Using BSP trees can facilitate visibility determination and scene management in rendering, improving performance in graphical applications.
