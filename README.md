@@ -1,64 +1,55 @@
-# CPP Module 02 Documentation
+# CPP Module 02 Overview
 
-## Core Concepts
+This module contains a series of exercises designed to introduce fundamental concepts in C++ programming. Throughout the exercises, you'll learn about object-oriented programming, operator overloading, type conversion, and geometric algorithms.
 
-In this module, we will explore fundamental concepts in C++ programming, including classes, objects, and encapsulation. Mastering these concepts is essential for creating robust C++ applications.
+## Exercises Overview
+- **Exercise 00 (ex00)**: Introduction to class creation. Implement Orthodox Canonical Form (OCF) for a basic class.
+- **Exercise 01 (ex01)**: Practice type conversion with constructor overloading and conversion operators.
+- **Exercise 02 (ex02)**: Explore operator overloading by overloading arithmetic and relational operators.
+- **Exercise 03 (ex03)**: Implement geometric algorithms, focusing on the BSP (Binary Space Partitioning) technique.
 
-### Classes and Objects
-A class is a blueprint for creating objects. It defines properties and behaviors that the objects created from the class can exhibit.
+## Module Objectives
+- Understand the significance of the Orthodox Canonical Form (OCF) in C++ classes, including the importance of copy constructors, assignment operators, and destructors.
+- Gain hands-on experience with type conversions and learn when they are necessary.
+- Implement operator overloading to enhance class usability and syntax intuitiveness.
+- Explore geometric algorithms, particularly those applied in computer graphics and spatial data structures, such as BSP.
 
-### Encapsulation
-Encapsulation is the bundling of data and methods that operate on the data within one unit, or class. This helps protect the integrity of the object by restricting outside access.
+## Building Instructions
+To build the exercises presented in this module, follow these steps:
+1. Clone the repository from GitHub:
+   ```bash
+   git clone https://github.com/yopeng2025/CPP-Module-02.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd CPP-Module-02
+   ```
+3. Compile the code using your preferred compiler, e.g., g++:
+   ```bash
+   g++ -o module02 *.cpp
+   ```
+4. Run the generated executable:
+   ```bash
+   ./module02
+   ```
 
-## Operator Overloading Examples
-C++ allows you to redefine the way operators work for user-defined types. Below are examples of operator overloading for a simple fixed-point arithmetic class.
+## Key Concepts
+### Orthodox Canonical Form (OCF)
+The Orthodox Canonical Form is a design pattern in C++ that ensures a class can manage its resources properly. It includes defining:
+- A default constructor
+- A copy constructor
+- An assignment operator
+- A destructor
+This form promotes better resource management, especially when working with dynamic memory.
 
-### Example of Overloading the Addition Operator
-```cpp
-class FixedPoint {
-private:
-    int value; // Represents fixed-point value
-public:
-    FixedPoint(int v) : value(v) {}
+### Type Conversion
+Type conversion involves converting one data type to another. C++ allows implicit and explicit conversions, and understanding these conversions is crucial for writing flexible and robust code.
 
-    FixedPoint operator+(const FixedPoint& other) {
-        return FixedPoint(this->value + other.value);
-    }
-};
-```
+### Operator Overloading
+Operator overloading enables developers to define custom behavior for operators in user-defined types. By overloading operators, you can make your classes interact more intuitively with built-in data types.
 
-### Example of Overloading the Output Operator
-```cpp
-std::ostream& operator<<(std::ostream& os, const FixedPoint& fp) {
-    os << fp.value; // Output the fixed point value
-    return os;
-}
-```
+### Geometric Algorithms (BSP)
+Binary Space Partitioning (BSP) is a method used in computer graphics to recursively divide a space into convex subsets. BSP trees are commonly applied in rendering techniques and visibility calculations.
 
-## Fixed-Point Arithmetic
-Fixed-point arithmetic is a representation of real numbers that keeps a fixed number of digits after the decimal point. This is useful for applications where precise decimal representation is crucial, such as in financial calculations. The advantages of fixed-point math include:
-- Predictable performance
-- Reduced complexity compared to floating-point arithmetic
-
-### Example of Fixed-Point Operation
-```cpp
-FixedPoint a(10);
-FixedPoint b(20);
-FixedPoint c = a + b; // c represents 30
-```
-
-## BSP Algorithm Application
-BSP (Binary Space Partitioning) is a method for recursively subdividing a space into convex sets by hyperplanes. It is commonly used in computer graphics to manage rendering of scenes.
-
-### Example of BSP Tree Construction
-```cpp
-class BSPNode {
-public:
-    BSPNode* left;
-    BSPNode* right;
-    // Function to build BSP tree
-};
-```
-
-### Application in Rendering
-Using BSP trees can facilitate visibility determination and scene management in rendering, improving performance in graphical applications.
+---
+This module offers hands-on experience with essential C++ programming concepts through practical examples. We encourage you to experiment with the code and deepen your understanding of each topic covered in the exercises.  
